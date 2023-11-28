@@ -14,28 +14,28 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var charLimit = getCharNums();
-  if (charLimit === undefined) {
-    return;
+  if (charLimit === null) {
+    getCharNums();
   }
 
   var upperCase = getUpperCase();
-  if (upperCase === undefined) {
-    return;
+  if (upperCase === null) {
+    getUpperCase();
   }
 
   var lowerCase = getLowerCase();
-  if (lowerCase === undefined) {
-    return;
+  if (lowerCase === null) {
+    getLowerCase();
   }
 
   var specialChar = getSpecialChar();
-  if (specialChar === undefined) {
-    return;
+  if (specialChar === null) {
+    getSpecialChar();
   }
 
   var numbers = getNumbers();
-  if (numbers === undefined) {
-    return;
+  if (numbers === null) {
+    getNumbers();
   }
 
   var validSymbols = []
@@ -81,9 +81,9 @@ function getCharNums() {
     return charLimit;
   }
   else {
-      window.alert("Try again! Invalid response. Please click Generate Password and start over.");
+      alert("Invalid response. Please enter a number between 8 and 128.");
+      return null;
     }
-  
 }
 
 
@@ -96,8 +96,8 @@ function getUpperCase() {
     return false;
   }
   else {
-    window.alert("Try again! Invalid response. Please click Generate Password and start over.")
-    
+    alert("Invalid response. Please enter Y or N.");
+    return null;
   }
 };
 
@@ -110,8 +110,8 @@ function getLowerCase() {
     return false;
   }
   else {
-    window.alert("Try again! Invalid response. Please click Generate Password and start over.")
-    
+    alert("Invalid response. Please enter Y or N.")
+    return null;
   }
 };
 
@@ -124,8 +124,8 @@ function getSpecialChar() {
     return false;
   }
   else {
-    window.alert("Try again! Invalid response. Please click Generate Password and start over.")
-    
+    alert("Invalid response. Please enter Y or N.")
+    return null;
   }
 };
 
@@ -138,11 +138,10 @@ function getNumbers() {
     return false;
   }
   else {
-    window.alert("Try again! Invalid response. Please click Generate Password and start over.")
-    
+    alert("Invalid response. Please enter Y or N.")
+    return null;
   }
 };
-
 
 
 
