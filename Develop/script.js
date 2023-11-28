@@ -1,4 +1,4 @@
-// Assignment code here
+
 var nums = [0,1,2,3,4,5,6,7,8,9];
 
 var sc = ['!', '@', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '^', '-', '.', '/', ':', ';', '<', '=', '>', '?', '[', ']', '_', '`', '{', '~', '}', '|'];
@@ -15,7 +15,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var charLimit = getCharNums();
   if (charLimit === null) {
-    getCharNums();
+    charLimit = getCharNums();
   }
 
   var upperCase = getUpperCase();
@@ -61,7 +61,8 @@ function writePassword() {
   for(var i=0; i < charLimit; i++) {
     var randomNum = Math.floor(Math.random() * validSymbols.length);
     password += validSymbols[randomNum];
-    console.log(validSymbols[randomNum]);
+    
+    
   }
 
 var passwordText = document.querySelector("#password");
@@ -142,6 +143,8 @@ function getNumbers() {
     return null;
   }
 };
+
+
 
 
 
